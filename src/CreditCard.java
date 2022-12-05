@@ -3,49 +3,53 @@ import java.util.Scanner;
 
 
 public class CreditCard {
-    static int accountNumber;
-    static int balance;
-
-    void PriorBank () {
-        accountNumber = 1067;
-        balance = 1805;
-    }
-
-    void BelarusBank () {
-        accountNumber = 1198;
-        balance = 1250;
-    }
-    void AlfaBank () {
-        accountNumber = 1325;
-        balance = 1500;
-    }
-    private int money;
     private Scanner sc = new Scanner(System.in);
+    private int money;
 
-    public void main(String[] args) {
+    class Description {
+
+        int accountNumber;
+        int balance;
 
 
-        //добавляем
-        System.out.println("Enter summ of accrual");
-        money = sc.nextInt();
-        plus();
-        //изъятие
-        System.out.println("Enter summ of removal");
-        money = sc.nextInt();
-        minus();
-        //состояние
-        condition();
+        public  Description(int accountNumber, int balance) {
+            this.accountNumber = accountNumber;
+            this.balance = balance;
+        }
 
+        public void plus() {
+            balance += money;
+        }
+
+        public void minus() {
+            balance -= money;
+        }
+
+        public void condition() {
+            System.out.println();
+        }
     }
-    public void plus () {
-        balance += money;
+        public void main(String[] args) {
+        Description alfa = new Description(1060, 1500);
+        Description belarus = new Description(990, 1300);
+        Description prior = new Description(1100, 600);
+            System.out.println("Enter card");
+
+
+            //добавляем
+            System.out.println("Enter summ of accrual");
+            money = sc.nextInt();
+            alfa.plus();
+            //изъятие
+            System.out.println("Enter summ of removal");
+            money = sc.nextInt();
+            alfa.minus();
+            //состояние
+            alfa.condition();
+
+
+
+        }
     }
-    public void minus() {
-        balance -= money;
-    }
-    public void condition() {
-        System.out.println();
-    }
-}
 
 
