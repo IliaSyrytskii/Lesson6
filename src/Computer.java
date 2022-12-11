@@ -1,5 +1,5 @@
 public class Computer {
-    public class RAM {
+    public static class RAM {
         String name;
         int size;
 
@@ -20,7 +20,7 @@ public class Computer {
                     '}';
         }
     }
-    public class HDD {
+    public static class HDD {
         String name;
         int volume;
         String type;
@@ -80,11 +80,13 @@ public class Computer {
         Computer comp1 = new Computer(2500, "Asus");
         System.out.println(comp1);
 
-        RAM ram1 = new RAM("DDR5", 16);
-        HDD hdd1 = new HDD("Seagate", 2, "internal");
+        Computer.RAM ram1 = new RAM("DDR5", 16);
+        HDD hdd1 = new HDD("Seagate", 2000, "internal");
 
 
         Computer comp2 = new Computer(4000, "Asus", hdd1, ram1);
         System.out.println(comp2);
     }
 }
+
+
